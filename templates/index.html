@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <h3>
+        {{ joke }}
+      </h3>
+      <form  action="/" method="get">
+        <button type="submit" name="button">Click for more</button>
+      </form>
+      <p>
+        <form action="/make_meme" method="post">
+          <input type="text" name="top" placeholder="top text"
+          {% if top %} value="{{top}}" {% endif %}><br>
+          <input type="text" name="bottom" placeholder="bottom text"
+          {% if bottom %} value="{{bottom}}" {% endif %}><br>
+          <input type="submit" id="make_meme" value="Make meme">
+        </form>
+      </p>
+      <img src={{filename}}>
+    </div>
+  </body>
+</html>
